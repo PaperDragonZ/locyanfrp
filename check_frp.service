@@ -1,0 +1,11 @@
+[Unit]
+Description=check_frp.service
+After=frpc.service
+
+[Service]
+Type=idle
+ExecStart=python /root/frp_LoCyanFrp-0.51.3_linux_arm64/check/main.py
+ExecStartPre=/bin/sleep 30
+
+[Install]
+WantedBy=multi-user.target
